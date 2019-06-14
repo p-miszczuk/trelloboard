@@ -14,13 +14,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    width: 100%;
 }
 
 body {
     background-color: color(bgColor);
     font-size: $baseFontSize;
     font-family: $baseFontFamily;
+    width: 100%;
 }
 
 #container {
@@ -35,7 +35,8 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-
+    
+    // board classes
     .wrapper {
         width: 272px;
         margin: 0 4px;
@@ -55,6 +56,7 @@ body {
             position: relative;
             cursor: pointer;
 
+            // board task header
             .column-header {
         
                 display: flex;
@@ -104,6 +106,7 @@ body {
                 }
             }
 
+            // tasklist
             .column-items {
             
                 display: block;
@@ -113,7 +116,8 @@ body {
                 padding: 0 8px;
                 z-index: 1;
                 min-height: 0;
-    
+                
+                // single task
                 a {
                     background-color: color(bgItemColor);
                     border-radius: $baseBorderRadius;
@@ -125,13 +129,65 @@ body {
                     position: relative;
                     text-decoration: none;
                     z-index: 0;
-    
+                    
+                    // task content 
                     .item {
                         overflow: hidden;
                         padding: 6px 8px 2px;
                         position: relative;
                         z-index: 10;
-    
+
+                        &:hover > .icon-pencil {
+                            opacity: 0.7;
+                        }
+
+                        // list card labels
+                        .list-card-labels {
+                            display: flex;
+                            flex-direction: row;
+                            overflow: auto;
+
+                            &:hover {
+                                span {
+                                    &:after {
+                                        background: rgba(0, 0, 0, 0.2);
+                                    }
+                                }                              
+                            }
+
+                            .label-orange, .label-violet {
+                                
+                                display: block;
+                                height: 8px;
+                                margin: 0 4px 4px 0;
+                                width: 40px;
+                                padding: 0;
+                                border-radius: $baseBorderRadius + 3px;
+                                position: relative;
+                                z-index: 0;
+
+                                &:after {
+                                    content: "";                                  
+                                    position: absolute;
+                                    top: 0px;
+                                    left: 0px;
+                                    width: 40px;
+                                    height: 8px;
+                                    border-radius: 6px;
+                                    z-index: 50;
+                                }
+                            }
+
+                            .label-orange {
+                                background: color(bgLabelOrangeColor);
+                            }
+
+                            .label-violet {
+                                background: color(bgLabelVioletColor);
+                            }
+                        }
+                        
+                        //task
                         .item-title {
                             display: block;
                             margin: 0 0 4px;
@@ -141,11 +197,53 @@ body {
                             color: color(fontColumnColor);
                             font-weight: $baseFontBold;
                             padding-bottom: 4px;
-    
-                            &:hover ~ .icon-pencil {
-                                opacity: 0.7;
+                        }
+
+                        // bages elements
+                        .badges {
+                            margin: 3px 3px 6px 0;
+                            display: flex;
+                            flex-direction: row;
+
+                            .badge-checklist {
+                                padding: 2px 4px 3px;
+                                display: inline;
+                                border-radius: $baseBorderRadius;
+                                background-color: color(bgTaskCheckListColor);
+                                color: color(fontBagesColor);
+                                
+                                .info-check {
+                                    font-size: 12px;
+                                    display: inline;
+                                    font-weight: $baseFontBold;
+                                    vertical-align: center;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                }
                             }
 
+                            .badge-date {
+                                padding: 2px 4px 3px;
+                                display: inline;
+                                border-radius: $baseBorderRadius;
+                                background-color: color(bgTaskDateListColor);
+                                color: color(fontBagesColor);
+
+                                .info-date {
+                                    font-size: 12px;
+                                    font-weight: $baseFontBold;
+                                    vertical-align: center;
+                                    white-space: nowrap;
+                                }
+                            }
+
+                            .badge-description {
+                                margin: 0 10px;
+                                padding-top: 5px;
+                                .icon-align-justyfify {
+                                    padding: 10px;
+                                }
+                            }
                         }
     
                         .icon-pencil {
@@ -160,6 +258,7 @@ body {
                             line-height: 10px;
                             z-index: 9;
                             opacity: 0;
+                            color:  color(fontEditColor);
                             transition: opacity 0.2s;
                             
                             &:hover {
@@ -172,11 +271,13 @@ body {
                 }
             }
 
+            // add new task
             .add-item {
                 padding: 8px 8px 10px;
                 user-select: none;
                 position: relative;
                 padding-left: 28px;
+                text-decoration: none;
     
                 &:hover {
                     text-decoration: underline;
