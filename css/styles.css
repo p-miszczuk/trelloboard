@@ -126,6 +126,24 @@ body {
               #container .wrapper .column .column-items a .item .icon-pencil:hover {
                 background-color: #ebecf0;
                 opacity: 0.8; }
+      #container .wrapper .column .add-item {
+        padding: 8px 8px 10px;
+        user-select: none;
+        position: relative;
+        padding-left: 28px; }
+        #container .wrapper .column .add-item:hover {
+          text-decoration: underline;
+          border-bottom-left-radius: 3px;
+          border-bottom-right-radius: 3px;
+          background-color: #c3c7d1; }
+        #container .wrapper .column .add-item .item-another-task {
+          color: #172b4d; }
+          #container .wrapper .column .add-item .item-another-task:before {
+            content: "+";
+            position: absolute;
+            top: -2px;
+            left: 10px;
+            font-size: 24px; }
 
 .hide {
   display: none;

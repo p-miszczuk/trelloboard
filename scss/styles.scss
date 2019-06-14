@@ -96,7 +96,7 @@ body {
                         color: color(headerAndAddElemColor);
                         padding: 0px 7px 9px;
                         &:hover {
-                            background-color: color(bgHeaderExtrasMenuHoverColor);
+                            background-color: color(bgHeaderAndAddElemHoverColor);
                             border-radius: 3px;
                         }
                     }
@@ -169,6 +169,32 @@ body {
     
                         }
                     }
+                }
+            }
+
+            .add-item {
+                padding: 8px 8px 10px;
+                user-select: none;
+                position: relative;
+                padding-left: 28px;
+    
+                &:hover {
+                    text-decoration: underline;
+                    border-bottom-left-radius: $baseBorderRadius;
+                    border-bottom-right-radius: $baseBorderRadius;
+                    background-color:color(bgHeaderAndAddElemHoverColor);
+                }
+    
+                .item-another-task {
+                   color: color(fontColumnColor);
+                   
+                   &:before {
+                        content: "+";
+                        position: absolute;
+                        top: -2px;
+                        left: 10px;
+                        font-size: 24px;
+                   }
                 }
             }
         }
