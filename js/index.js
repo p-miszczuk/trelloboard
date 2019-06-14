@@ -10,8 +10,7 @@
         });
 
         // bloking columns element
-        $(".column-items, .add-item").mousedown(function(e) {
-            e.preventDefault();
+        $(".column-items").mousedown(function(e) {
             $("#container").sortable("disable");
         }).mouseup(function() {
             $("#container").sortable("enable");
