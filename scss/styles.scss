@@ -1,4 +1,13 @@
-$bgColor: #0079bf;
+@import 'colors';
+@import 'baseSettings';
+
+@function color($key) {
+    @if map-has-key($colors, $key) {
+      @return map-get($colors, $key);
+    }
+  
+    @return null;
+}
 
 * {
     margin: 0;
@@ -7,5 +16,42 @@ $bgColor: #0079bf;
 }
 
 body {
-    background-color: $bgColor;
+    background-color: color(bgColor);
+    font-size: $baseFontSize;
+    font-family: $baseFontFamily;
+}
+
+#container {
+    user-select: none;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 30px 8px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    .wrapper {
+        width: 272px;
+        margin: 0 4px;
+        height: 100%;
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: top;
+        white-space: nowrap;
+        z-index: 1;
+
+        .column {
+            background-color: color(bgColumnColor);
+            border-radius: $baseBorderRadius;
+            display: flex;
+            flex-direction: column;
+            max-height: 100%;
+            position: relative;
+            cursor: pointer;
+        }
+    }
 }
