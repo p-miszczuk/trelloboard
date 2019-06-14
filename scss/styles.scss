@@ -6,8 +6,8 @@
     @if map-has-key($colors, $get) {
       @return map-get($colors, $get);
     }
-  
-    @return null;
+
+    @return #ff0000;
 }
 
 * {
@@ -25,7 +25,6 @@ body {
 
 #container {
     user-select: none;
-    white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 30px 8px;
@@ -44,7 +43,6 @@ body {
         box-sizing: border-box;
         display: inline-block;
         vertical-align: top;
-        white-space: nowrap;
         z-index: 1;
 
         .column {
@@ -70,10 +68,9 @@ body {
                     height: 28px;
                     resize: none;
                     border: none;
-                    color: color(fontHeaderColumnColor);
+                    color: color(fontColumnColor);
                     background: transparent;
                     font-weight: $baseFontBoldExtra;
-                    pointer-events: none;
                     padding: 4px 8px;
                     margin: -4px 0;
                     flex-grow: 1;
@@ -95,7 +92,7 @@ body {
                         font-weight: $baseFontBold;
                         font-size: 16px;
                         letter-spacing: 1px;
-                        color: color(headerAndAddElemColor);
+                        color: color(HeaderAndAddElemColor);
                         padding: 0px 7px 9px;
                         &:hover {
                             background-color: color(bgHeaderAndAddElemHoverColor);
@@ -108,11 +105,12 @@ body {
 
             // tasklist
             .column-items {
-            
+                
                 display: block;
                 flex: 1 1 auto;
                 overflow-y: auto;
                 overflow-x: hidden;
+                word-wrap: break-word;
                 padding: 0 8px;
                 z-index: 1;
                 min-height: 0;
@@ -263,7 +261,7 @@ body {
                             
                             &:hover {
                                 background-color: color(bgEditIconColor);
-                                opacity: 0.8;
+                                opacity: 0.7;
                             }
     
                         }
@@ -303,10 +301,22 @@ body {
     }
 }
 
-
 //hide element class
 .hide {
     display: none;
     text-indent: -9999px;
     height: 0;
+}
+//rotate elements while moving
+.rotate{
+    transform: rotate(5deg);
+}
+//placeholder of the sliding element
+.placeholder {
+  background-color: color(shadowColor);
+  border-radius: $baseBorderRadius;
+  display: inline-block;
+  width: 272px !important;
+  margin: 0 10px ;
+  min-height: 55px;
 }
