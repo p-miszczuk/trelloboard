@@ -1,7 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  width: 100%; }
 
 body {
   background-color: #0079bf;
@@ -37,5 +38,48 @@ body {
       max-height: 100%;
       position: relative;
       cursor: pointer; }
+      #container .wrapper .column .column-header {
+        display: flex;
+        padding: 10px 8px;
+        width: 100%; }
+        #container .wrapper .column .column-header .column-header-target {
+          overflow: hidden;
+          word-wrap: break-word;
+          display: block;
+          height: 28px;
+          resize: none;
+          border: none;
+          color: #172b4d;
+          background: transparent;
+          font-weight: 700;
+          pointer-events: none;
+          padding: 4px 8px;
+          margin: -4px 0;
+          flex-grow: 1;
+          line-height: 20px;
+          cursor: pointer; }
+        #container .wrapper .column .column-header .column-header-extras {
+          display: block;
+          box-sizing: border-box;
+          width: 30px;
+          height: 25px;
+          text-align: center;
+          margin: -4px;
+          line-height: 19px; }
+          #container .wrapper .column .column-header .column-header-extras a {
+            text-decoration: none;
+            display: block;
+            font-weight: 400;
+            font-size: 16px;
+            letter-spacing: 1px;
+            padding: 0px 7px 9px 7px; }
+            #container .wrapper .column .column-header .column-header-extras a:hover {
+              background-color: #c3c7d1;
+              border-radius: 3px; }
+
+.hide {
+  display: none;
+  text-indent: -9999px;
+  height: 0; }
 
 /*# sourceMappingURL=styles.css.map */
