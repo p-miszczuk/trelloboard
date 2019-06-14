@@ -5,6 +5,15 @@
 
     function init() {
 
+        // bloking columns element
+        $(".column-items, .add-item").mousedown(function(e) {
+            e.preventDefault(); //bloking copy text
+            $("#container").sortable("disable");
+        }).mouseup(function() {
+            $("#container").sortable("enable");
+        });
+       
+        // move tasks
         $(".column-items").sortable({
             connectWith: '.column-items',
             placeholder: 'placeholder-item',

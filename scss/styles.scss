@@ -265,35 +265,40 @@ body {
                         }
                     }
                 }
+
+                .fake {
+                    height: 2px;
+                    background-color: transparent;
+                }
             }
 
             // add new task
             .add-item {
+                display: block;
                 padding: 8px 8px 10px;
-                user-select: none;
                 position: relative;
                 padding-left: 28px;
                 text-decoration: none;
     
-                &:hover {
-                    color: color(fontColumnColor);
-                    text-decoration: underline;
-                    border-bottom-left-radius: $baseBorderRadius;
-                    border-bottom-right-radius: $baseBorderRadius;
-                    background-color:color(bgHeaderAndAddElemHoverColor);
-                }
-    
-                .item-another-task {
-                   color: color(HeaderAndAddElemColor);
-                   
-                   &:before {
-                        content: "+";
-                        position: absolute;
-                        top: -2px;
-                        left: 10px;
-                        font-size: 24px;
-                   }
-                }
+                    &:hover {
+                        color: color(fontColumnColor);
+                        text-decoration: underline;
+                        border-bottom-left-radius: $baseBorderRadius;
+                        border-bottom-right-radius: $baseBorderRadius;
+                        background-color:color(bgHeaderAndAddElemHoverColor);
+                    }
+        
+                    .item-another-task {
+                       color: color(HeaderAndAddElemColor);
+                                           
+                       &:before {
+                            content: "+";
+                            position: absolute;
+                            top: -2px;
+                            left: 10px;
+                            font-size: 24px;
+                       }
+                    }
             }
         }
     }
