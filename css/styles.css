@@ -49,7 +49,6 @@ body {
           height: 28px;
           resize: none;
           border: none;
-          color: #172b4d;
           background: transparent;
           font-weight: 700;
           pointer-events: none;
@@ -72,10 +71,61 @@ body {
             font-weight: 400;
             font-size: 16px;
             letter-spacing: 1px;
-            padding: 0px 7px 9px 7px; }
+            padding: 0px 7px 9px; }
             #container .wrapper .column .column-header .column-header-extras a:hover {
               background-color: #c3c7d1;
               border-radius: 3px; }
+      #container .wrapper .column .column-items {
+        display: block;
+        flex: 1 1 auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 0 8px;
+        z-index: 1;
+        min-height: 0; }
+        #container .wrapper .column .column-items a {
+          background-color: #fff;
+          border-radius: 3px;
+          box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+          display: block;
+          margin-bottom: 8px;
+          max-width: 300px;
+          min-height: 20px;
+          position: relative;
+          text-decoration: none;
+          z-index: 0; }
+          #container .wrapper .column .column-items a .item {
+            overflow: hidden;
+            padding: 6px 8px 2px;
+            position: relative;
+            z-index: 10; }
+            #container .wrapper .column .column-items a .item .item-title {
+              display: block;
+              margin: 0 0 4px;
+              overflow: hidden;
+              text-decoration: none;
+              word-wrap: break-word;
+              color: #172b4d;
+              font-weight: 400;
+              padding-bottom: 4px; }
+              #container .wrapper .column .column-items a .item .item-title:hover ~ .icon-pencil {
+                opacity: 0.7; }
+            #container .wrapper .column .column-items a .item .icon-pencil {
+              width: 28px;
+              height: 28px;
+              position: absolute;
+              border-radius: 3px;
+              padding: 5px;
+              top: 4px;
+              right: 4px;
+              display: block;
+              line-height: 10px;
+              z-index: 9;
+              opacity: 0;
+              transition: opacity 0.2s; }
+              #container .wrapper .column .column-items a .item .icon-pencil:hover {
+                background-color: #ebecf0;
+                opacity: 0.8; }
 
 .hide {
   display: none;
