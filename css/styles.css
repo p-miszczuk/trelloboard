@@ -195,12 +195,13 @@ body {
         padding-left: 28px;
         text-decoration: none; }
         #container .wrapper .column .add-item:hover {
+          color: #172b4d;
           text-decoration: underline;
           border-bottom-left-radius: 3px;
           border-bottom-right-radius: 3px;
           background-color: #c3c7d1; }
         #container .wrapper .column .add-item .item-another-task {
-          color: #172b4d; }
+          color: #6b778c; }
           #container .wrapper .column .add-item .item-another-task:before {
             content: "+";
             position: absolute;

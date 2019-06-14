@@ -280,6 +280,7 @@ body {
                 text-decoration: none;
     
                 &:hover {
+                    color: color(fontColumnColor);
                     text-decoration: underline;
                     border-bottom-left-radius: $baseBorderRadius;
                     border-bottom-right-radius: $baseBorderRadius;
@@ -287,7 +288,7 @@ body {
                 }
     
                 .item-another-task {
-                   color: color(fontColumnColor);
+                   color: color(HeaderAndAddElemColor);
                    
                    &:before {
                         content: "+";
@@ -302,6 +303,8 @@ body {
     }
 }
 
+
+//hide element class
 .hide {
     display: none;
     text-indent: -9999px;
