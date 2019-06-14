@@ -5,11 +5,22 @@
 
     function init() {
 
+        $(".add-item").mousedown(function(e) {
+            e.preventDefault();
+        });
+
         // bloking columns element
         $(".column-items, .add-item").mousedown(function(e) {
-            e.preventDefault(); //bloking copy text
+            e.preventDefault();
             $("#container").sortable("disable");
         }).mouseup(function() {
+            $("#container").sortable("enable");
+        });
+
+        // bloking adding element
+        $(".add-item").mouseover(function(e) {
+            $("#container").sortable("disable");
+        }).mouseleave(function() {
             $("#container").sortable("enable");
         });
        
